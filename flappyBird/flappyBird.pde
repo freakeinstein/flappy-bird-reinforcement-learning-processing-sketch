@@ -188,6 +188,7 @@ void draw(){
         
         break;
   }
+  //tracker(birdPosition.x,birdPosition.y);
 }
 void mousePressed(){
     switch(scene)
