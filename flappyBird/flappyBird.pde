@@ -4,6 +4,9 @@ Serial port;
 Minim minim;
 AudioSample wingSound,hitSound,scoreSound,dieSound;
 
+int WIDTHSETUP = 1000;
+int HEIGHTSETUP = 700;
+
 ArrayList<Stump> stumps;
 
 float stumpMIN=0,stumpMAX=0,stumpDiffY=150,stumpDiffX=250;
@@ -24,11 +27,13 @@ PImage imgTitle,imgGetReady;
 PImage imageGameOver,imageScoreCard,imageClick,goldScoreCard;
 int gameOverPosY,scoreCardPosY;
 
-char ch;
+char ch= 'z';
 
 void setup(){
   size(1000,700);
 // port = new Serial(this,Serial.list()[1],9600);
+
+  //frameRate(100000000);
   
   topScoreFileLoader();
   minim = new Minim(this);
@@ -60,7 +65,7 @@ void setup(){
   stumpCount++;
   stumps.add(new Stump(random(stumpMIN,stumpMAX),0));
   for(int k=1;k<=stumpCount;k++){
-    stumps.add(new Stump(random(stumpMIN,stumpMAX),stumpDiffX*k));
+    stumps.add(new Stump(/*random(stumpMIN,stumpMAX)*/200,stumpDiffX*k));
   }  
       imgTitle=loadImage("title.png");
     imgGetReady=loadImage("getReady.png");
@@ -103,6 +108,7 @@ void draw(){
       scene=1;
       break;
   }
+  ch = 'z';
  }
  
   drawBackground();
@@ -111,7 +117,7 @@ void draw(){
   textAlign(CENTER);
   text("Hello Arduino, Hello Processing.", width/2, 40); 
   
-  
+  //tracker(birdPosition.x,birdPosition.y); ////////////// ========================= TRACKER LIES HERE ! =========================================================
   switch(scene)
   {
     case 0:
@@ -188,7 +194,7 @@ void draw(){
         
         break;
   }
-  //tracker(birdPosition.x,birdPosition.y);
+  
 }
 void mousePressed(){
     switch(scene)
@@ -236,8 +242,8 @@ void initORreset()
     BGY=-1*(background.height-height+base.height);
   BY=height-base.height;
   
-  stumpMIN = BY/6;
-  stumpMAX = BY-stumpDiffY-stumpMIN;
+  stumpMIN = 200;//BY/6;
+  stumpMAX = 200;//BY-stumpDiffY-stumpMIN;
       gameOverPosY=imageGameOver.height*-1;
     scoreCardPosY=height;
   

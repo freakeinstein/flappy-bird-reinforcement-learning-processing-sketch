@@ -23,7 +23,7 @@ void applyForces(){
 }
 
 void floorHit(){
-  if(birdPosition.y > BY && (!hit || stumpHit)){
+  if((birdPosition.y > BY || birdPosition.y < 0) && (!hit || stumpHit)){
     birdPosition.sub(velocity);
     velocity.set(0,0);
     gravity.set(0,0);
