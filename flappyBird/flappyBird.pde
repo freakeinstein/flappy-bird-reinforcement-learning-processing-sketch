@@ -117,7 +117,7 @@ void draw(){
   textAlign(CENTER);
   text("Hello Arduino, Hello Processing.", width/2, 40); 
   
-  //tracker(birdPosition.x,birdPosition.y); ////////////// ========================= TRACKER LIES HERE ! =========================================================
+  tracker(birdPosition.x,birdPosition.y); ////////////// ========================= TRACKER LIES HERE ! =========================================================
   switch(scene)
   {
     case 0:

@@ -15,7 +15,7 @@ int xxxx = 0;
 
 boolean reset_episode = true; // to check whether our bird is in dead state or in alive state
 
-QMatrix flappyQMatrix = new QMatrix(WIDTHSETUP,HEIGHTSETUP,0);
+QMatrix flappyQMatrix = new QMatrix(WIDTHSETUP,HEIGHTSETUP,1,5);
 Qelement current_state = flappyQMatrix.getState(x_dist,y_dist);
 Qelement old_state = flappyQMatrix.getState(x_dist,y_dist);
 
