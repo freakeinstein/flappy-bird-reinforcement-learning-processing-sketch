@@ -7,8 +7,10 @@ float x_dist = 200;
 float y_dist = 200;
 
 float reward = 2;
+float score_reward = 50;
+boolean score_reward_now = false;
 int punishment = -1000;
-int fly_energy = -50;
+int fly_energy = -100;
 int no_fly_energy = 1;
 float bias = 0.2;
 
@@ -32,7 +34,9 @@ void DoQLearningStep(){
  // if(show_log) print(old_state.jump_score,"\n");
   current_state = flappyQMatrix.getState(x_dist,y_dist);
   if(!reset_episode){
-    updateQMatrix(reward,proposedAction,leraningRateValue, discountRateValue, old_state, current_state );
+    float rew = reward;
+    if(score_reward_now) { rew += score_reward; score_reward_now = false; }
+    updateQMatrix(rew,proposedAction,leraningRateValue, discountRateValue, old_state, current_state );
   }else{
     updateQMatrix(punishment,proposedAction,leraningRateValue, discountRateValue, old_state, current_state );
     reset_episode = false;
@@ -70,5 +74,9 @@ void updateQMatrix(float reinforcement, boolean is_jump, float learning_rate,flo
     ostate.no_jump_score = (1-learning_rate)*ostate.jump_score + learning_rate*( reinforcement + no_fly_energy + discountRate * nstate.max_future_score() );
   }
   //print("after update ",ostate.jump_score,"\n");
+}
+
+void giveScoreIncrementReward(){ // called from stumper
+  score_reward_now = true;
 }
   

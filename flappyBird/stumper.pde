@@ -6,8 +6,9 @@ void stumper(float x,float y){
 void checkScored()
 {
      if(stumps.get(nextStump).posX+stump.width < birdX){
-     score++;
-     if(nextStump<4)nextStump++; else nextStump=0;
-     scoreSound.trigger();
+       score++;
+       if(nextStump<4)nextStump++; else nextStump=0;
+       scoreSound.trigger();
+       giveScoreIncrementReward();
      }
 }
