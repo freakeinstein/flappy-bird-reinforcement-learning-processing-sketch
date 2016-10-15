@@ -18,7 +18,7 @@ void flyingBird(){
 
 void applyForces(){
   velocity.add(gravity);
-  velocity.limit(20);
+  velocity.limit(2);
   birdPosition.add(velocity);
 }
 

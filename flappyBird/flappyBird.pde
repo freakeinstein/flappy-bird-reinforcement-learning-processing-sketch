@@ -3,6 +3,7 @@ import processing.serial.*;
 Serial port;
 Minim minim;
 AudioSample wingSound,hitSound,scoreSound,dieSound;
+boolean sound_enable = false;
 
 int WIDTHSETUP = 1000;
 int HEIGHTSETUP = 700;
@@ -33,7 +34,7 @@ void setup(){
   size(1000,700);
 // port = new Serial(this,Serial.list()[1],9600);
 
-  //frameRate(100000000);
+  frameRate(100000000);
   
   topScoreFileLoader();
   minim = new Minim(this);
@@ -100,7 +101,7 @@ void draw(){
       if(!stumpHit)
       {
         velocity.add(up);
-        wingSound.trigger();
+        if(sound_enable) wingSound.trigger();
       }
       break;
     case 3:   //game over
@@ -165,8 +166,8 @@ void draw(){
       line(0,stumpMIN,width,stumpMIN);
       stroke(#ffffff);
       line(0,stumpMAX,width,stumpMAX);*/
-      if(hitSnd){hitSound.trigger(); fill(255); for(int z=0;z<100;z++) rect(0,0,width,height); hitSnd=false; if(stumpHit) dieSound.trigger();}
-      printNum(score,width/2,height/6,'b');
+      if(hitSnd){if(sound_enable)hitSound.trigger(); fill(255); for(int z=0;z<100;z++) rect(0,0,width,height); hitSnd=false; if(stumpHit){ if(sound_enable) dieSound.trigger();}}
+      //printNum(score,width/2,height/6,'b');
       break;
     case 3:
         for(int k=0;k<stumps.size();k++){
@@ -197,6 +198,9 @@ void draw(){
   
 }
 void mousePressed(){
+  
+  show_log = !show_log;
+  
     switch(scene)
   {
     case 0:    //title screen
@@ -209,7 +213,7 @@ void mousePressed(){
       if(!stumpHit)
       {
         velocity.add(up);
-        wingSound.trigger();
+        if(sound_enable) wingSound.trigger();
       }
       break;
     case 3:   //game over
@@ -242,8 +246,9 @@ void initORreset()
     BGY=-1*(background.height-height+base.height);
   BY=height-base.height;
   
-  stumpMIN = 200;//BY/6;
-  stumpMAX = 200;//BY-stumpDiffY-stumpMIN;
+  //================================================= Randomize stump ===========================
+  stumpMIN = BY/6;
+  stumpMAX = BY-stumpDiffY-stumpMIN;
       gameOverPosY=imageGameOver.height*-1;
     scoreCardPosY=height;
   
