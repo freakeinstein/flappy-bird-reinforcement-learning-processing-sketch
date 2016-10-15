@@ -28,3 +28,11 @@ https://youtu.be/QggzjNfBKlY
 ###how it works: [ working on it ]
 
 http://freakeinstein.github.io
+
+###future updates:
+
+This project is very basic immplementation. Try a Deep NN version of Q learning with computer vision.
+
+###reference:
+
+I've used this website to implement this project: http://www.cs.indiana.edu/~gasser/Salsa/
