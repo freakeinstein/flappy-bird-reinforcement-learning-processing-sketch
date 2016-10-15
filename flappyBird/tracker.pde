@@ -1,5 +1,5 @@
 void tracker(float x, float y){
-  boolean debug = true;
+  boolean debug = false;
   
  // boolean last_reset = true; // to keep track of death penalty, kinda worst method but not interested to disturb original flappy bird code :(
  // boolean current_reset = true;

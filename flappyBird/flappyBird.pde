@@ -167,7 +167,7 @@ void draw(){
       stroke(#ffffff);
       line(0,stumpMAX,width,stumpMAX);*/
       if(hitSnd){if(sound_enable)hitSound.trigger(); fill(255); for(int z=0;z<100;z++) rect(0,0,width,height); hitSnd=false; if(stumpHit){ if(sound_enable) dieSound.trigger();}}
-      //printNum(score,width/2,height/6,'b');
+      printNum(score,width/2,height/6,'b');
       break;
     case 3:
         for(int k=0;k<stumps.size();k++){

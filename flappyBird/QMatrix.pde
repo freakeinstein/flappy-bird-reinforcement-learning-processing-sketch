@@ -14,8 +14,8 @@ class QMatrix{
   
   Qelement getState(float w,float h){
     //print((int)w,"  ",(int)h,"\n");
-    w = w/200;
-    h = h/200;
+    w = w/100;
+    h = h/50;
     //print(w,h,"\n");
     return QMatrix_ [((int)w)][(2*height-((int)h))-1];
   }

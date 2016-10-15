@@ -52,11 +52,12 @@ void DoQLearningStep(){
 }
 
 boolean proposeActionFromProbability(Qelement state, float explorationRate, int age){
-  float probability = abs(explorationRate*age*state.jump_score)/(abs(explorationRate*age*state.jump_score)+abs(explorationRate*age*state.no_jump_score));
+  //float probability = abs(explorationRate*age*state.jump_score)/(abs(explorationRate*age*state.jump_score)+abs(explorationRate*age*state.no_jump_score));
   // exp(explorationRate*age*state.jump_score)/(exp(explorationRate*age*state.jump_score)+exp(explorationRate*age*state.no_jump_score));
-  if(probability < 0.4 && show_log) print(state.jump_score,state.no_jump_score,"probability",probability,"\n");
-  float rand = random(0,1);
-  if(rand < probability){//*bias){
+  //if(probability < 0.4 && show_log) 
+  if(show_log) print(state.jump_score,state.no_jump_score,"\n");//"probability",probability,"\n");
+  //float rand = random(0,1);
+  if(state.jump_score > state.no_jump_score){ //rand < probability){//*bias){
     return true;
   }else{
     return false;
