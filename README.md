@@ -25,9 +25,9 @@ just comment out function call to `tracker()` in the `void draw()` looper.
 
 https://youtu.be/QggzjNfBKlY
 
-###how it works: [ working on it ]
+###how it works: Q learning tutorial
 
-http://freakeinstein.github.io
+http://freakeinstein.github.io/2016/10/20/Q-learning-flappy-bird-game-demystified-(part-1)/
 
 ###future updates:
 
