@@ -2,7 +2,7 @@
 
 ###Backstory:
 
-This project makes use of an old work, a flappy bird game, which can be playable using an ardiono based controller. Me with my classmate denin did that as a hobby project during hardware freedom day 2015. Now, I found that, I could use above game to test Q learning algorithm.
+This project makes use of an old work, a flappy bird game, which can be playable using an arduino based controller. Me with my classmate Denin did that as a hobby project during hardware freedom day 2015. Now, I found that, I could use above game to test Q learning algorithm.
 
 ###how it modified:
 
