@@ -2,7 +2,7 @@
 
 ###Backstory:
 
-This project uses version of a processing sketch which was a pure implementation of 'flappy bird game', capable of playing using arduino serial communication. Me with my classmate denin (@ MCA CET) took a night to code this, to demonstrate something on hardware freedom day 2015.
+This project makes use of an old work, a flappy bird game, which can be playable using an ardiono based controller. Me with my classmate denin did that as a hobby project during hardware freedom day 2015. Now, I found that, I could use above game to test Q learning algorithm.
 
 ###how it modified:
 
@@ -17,7 +17,7 @@ You should install 'minim' library available for processing from add library opt
 This code can also be used with arduino, where the arduino sketch should provide click commands through serial communication. 
 Corresponding arduino related code is commented out for now.
 
-###If you wanna disable Q learning and play the game myself:
+###If you wanna disable Q learning and play the game yourself:
 
 just comment out function call to `tracker()` in the `void draw()` looper.
 
