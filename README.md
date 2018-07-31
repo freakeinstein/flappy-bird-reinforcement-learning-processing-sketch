@@ -29,7 +29,7 @@ https://youtu.be/QggzjNfBKlY
 
 http://freakeinstein.github.io/2016/10/20/Q-learning-flappy-bird-game-demystified-(part-1)/
 
-###future updates:
+### future updates:
 
 This project is very basic immplementation. Try a Deep NN version of Q learning with computer vision.
 
