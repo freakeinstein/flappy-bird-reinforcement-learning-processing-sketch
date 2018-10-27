@@ -90,9 +90,10 @@ void setup(){
 }
 void draw(){
   
- // ch=port.lastChar();
- //if(ch=='L'){ lc=1;}
- //if(ch=='R'){ lc=0;}
+ /*   ch=port.lastChar();
+  *   if(ch=='L'){ lc=1;}
+  *   if(ch=='R'){ lc=0;}
+  */
  if(ch=='R'||ch=='L')//if(lc==1)
  {
     switch(scene)
